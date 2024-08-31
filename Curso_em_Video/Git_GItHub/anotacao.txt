@@ -1,4 +1,3 @@
 
 
-Issues.
-    É uma forma de interargir com outras pessoas no GitHub, para corrigir um problema que deu em seu codigo ou tirar uma duvida sobre um progeto em especifico.  
+Bem não vi sobre como usar i git pelo Terminal ou Pront de Comando mas sim no GitHub Desktop.
