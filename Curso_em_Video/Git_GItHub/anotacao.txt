@@ -1,3 +1,4 @@
 
 
-
+Issues.
+    É uma forma de interargir com outras pessoas no GitHub, para corrigir um problema que deu em seu codigo ou tirar uma duvida sobre um progeto em especifico.  
