@@ -1,2 +1,2 @@
 
-print ("cot + 1")
+print ('ola')
