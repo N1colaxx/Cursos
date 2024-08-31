@@ -1,1 +1,2 @@
-print   ('Ola mundo')
+
+print ("cot + 1")
