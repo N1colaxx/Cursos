@@ -5,4 +5,4 @@ Olá esotu, comecei a estudar progamação e esse repositorIO vai ser dedicado a
 
  No momento estou fazendo cursos gratis, dando um foco no Curso em Video. Porem, não vou ter os certificados por não pagar.
  
- pse: to apertado com grana.
+ ps: to apertado com grana.
