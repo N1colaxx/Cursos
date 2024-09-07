@@ -1,9 +1,9 @@
 
 
 
-from math import ceil
-from reprlib import aRepr
+from math import trunc
+# from reprlib import aRepr
 
 num = float (input('Digite um numero com virgula: '))
-arredonda = ceil(num)
-print("O numero {} tem a parte inteira {}".format(num, arredonda))
+inteira = trunc(num)
+print("O numero {} tem a parte inteira {}".format(num, inteira))

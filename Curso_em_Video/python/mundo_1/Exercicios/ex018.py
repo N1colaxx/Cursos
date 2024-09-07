@@ -2,16 +2,16 @@
 
 
 
-import math
+from math import radians, sin, cos, tan
 
 angulo = float (input('\n Digite o angulo: '))
 
-# PY usa RADIANOS nas consta aqui estou convertendo de Graus para -> Radianos
-radiano = math.radians(angulo)
+# PY usa RADIANOS nas contas, aqui estou convertendo de Graus para -> Radianos
+radiano = radians(angulo)
 
 # comvertido faço as contas
-seno = math.sin(radiano)
-cosceno = math.cos(radiano)
-tangente = math.tan(radiano)
+seno = sin(radiano)
+cosceno = cos(radiano)
+tangente = tan(radiano)
 
-print(' Dado o angulo {}° graus temos: \n Seno = {:.3f} \n Cosceno = {:.3f} \n Tangente = {}'.format(angulo, seno, cosceno, tangente))
+print(' Dado o angulo {}° graus temos: \n Seno = {:.2f} \n Cosceno = {:.2f} \n Tangente = {:.2f}'.format(angulo, seno, cosceno, tangente))
