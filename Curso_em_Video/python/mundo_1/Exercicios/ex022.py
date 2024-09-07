@@ -5,26 +5,25 @@
 # Nome = 'Nicolas Cardozo Felix Borges'
 #  aqui tem 29 caracteres
 
-nome = input('\nDigite seu nome completo:')
+nome = str(input('\nDigite seu nome completo:'))
 
 print('Nome em maiusculo => {}'.format(nome.upper()))
 print('Nome em minusculo => {}'.format(nome.lower()))
 
 
 ls = nome.strip()
-ls = nome.replace(' ', '')
-print('''\nQuantidade de Letras sem considererar 
-os espaços =>''', len(ls))
+lss = nome.replace(' ', '') # remove os espaços do nome TODOS
+print('''\nQuantidade de Letras sem considererar os espaços =>''', len(lss))
 
 
 
 
 # ele separa como um lista ex: 'Nicols', 'Cardozo', 'Felix', 'Borges'
 #                                  0         1          2       3
-lista_nome = nome.split()
+lista_nomes = nome.split()
 
 # Acessa o Primeiro nome = 0
-primeiro_nome = lista_nome[0]
+primeiro_nome = lista_nomes[0]
 
 # Ve o comprimento
 comprimento = len(primeiro_nome)
