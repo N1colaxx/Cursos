@@ -1,2 +1,1 @@
-# Cuso de  Python do
-# Curso em Video  
+# Cuso de  Python do Curso em Video  
