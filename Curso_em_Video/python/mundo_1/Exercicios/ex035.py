@@ -23,4 +23,4 @@ else:
         Valor 1= {}
         Valor 2= {}
         Valor 3= {}
-    '''.format(r1, r2, r3))
+    '''.format(r1, r2, r3)) 
