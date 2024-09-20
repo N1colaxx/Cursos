@@ -1,6 +1,7 @@
 
 
-
+vfp = float
+for_pagamento= str
 
 vp = float(input('\nQual o valor do produto: '))
 print('''Opções de pagamento?
@@ -10,9 +11,6 @@ print('''Opções de pagamento?
     4 = 3x ou mais no cartão, 20% juros
 ''')
 for_paga = int(input('Qual a forma de pagamento: '))
-
-vfp = float
-for_pagamento= str
 
 if for_paga == 1:
     vfp = vp - (vp * (10/100))

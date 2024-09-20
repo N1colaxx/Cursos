@@ -17,7 +17,7 @@ if (idade <= 17):
     print('Vc ainda irá sealistar!')
     tf =  18 - idade
     print('Falta {} anos para seu alsitamento.'.format(tf))
-elif (idade == 18):
+elif (idade >= 18):
     print('Vc esta na idade correta para o alsitamento!')
 else:
     print('Ja passou da hora do seu alistamento!!')
