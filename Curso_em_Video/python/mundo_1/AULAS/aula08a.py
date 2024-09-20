@@ -36,26 +36,26 @@
 #======================================================================================================================
 
 
-import random
+# import random
+# # from random import randint
+#
+# num = random.randint(1, 10)
+# print(num)
+#
+# #--------------------------------------------------
+#
+# #import random
 # from random import randint
-
-num = random.randint(1, 10)
-print(num)
-
-#--------------------------------------------------
-
-#import random
-from random import randint
-
-num = randint(1, 10)
-print(num)
-
+#
+# num = randint(1, 10)
+# print(num)
+#
 
 #======================================================================================================================
 
-# import emoji
-# print(emoji.emojize("Ola Mundi :bow_and_arrow:"))
-#
+import emoji
+print(emoji.emojize("Ola Mundi :bow_and_arrow:"))
+
 
 
 
