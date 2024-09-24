@@ -8,6 +8,6 @@ fra_inv = fra[::-1] # inverti a String
 print('-='*10, '\n', fra, '\n', '-='*10)
 
 if fra == fra_inv:
-    print('Esse prase é Polindromo.')
+    print('Essa prase é Polindromo.')
 else:
-    print('essa frase Não é Polindroma.')
+    print('Essa frase Não é Polindroma.')
