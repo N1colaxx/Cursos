@@ -16,7 +16,7 @@ for i in range(1, rep+1):
     print(i, '° Pessoa')
     nome = str( input('Seu nome: '))
     idade = int(input('Sua idade: '))
-    sexo = str( input('Seu sexo M/F: ').strip().upper())
+    sexo = str( input('Seu sexo M/F: ').strip().upper())    
 
     info = {
         'nome': nome,
