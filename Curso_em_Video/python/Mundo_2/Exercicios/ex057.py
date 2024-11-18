@@ -9,5 +9,4 @@ while True:
 
     else:
         print('"ERO" Digite novamente!! \n')
-        continue
 
