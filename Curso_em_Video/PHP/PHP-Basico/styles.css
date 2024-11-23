@@ -1,0 +1,50 @@
+/* Resetando margens e padding do body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo e fundo da página */
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;  /* Alinha horizontalmente */
+    align-items: center;      /* Alinha verticalmente */
+    font-family: Arial, sans-serif;
+    background-color: #121212;  /* Fundo escuro */
+    color: #ddd;               /* Texto claro */
+}
+
+/* Estilo da div centralizada */
+.centralizada {
+    width: 300px;  /* Tamanho fixo inicial da div */
+    height: auto;  /* A altura da div será ajustada conforme o conteúdo */
+    border: 2px solid #fff;  /* Borda para visualizar a div */
+    padding: 10px;
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    overflow: hidden;  /* Para esconder o conteúdo que ultrapassa os limites da div */
+    display: flex;
+    justify-content: flex-start;  /* Alinha o conteúdo à esquerda */
+    align-items: flex-start;      /* Alinha o conteúdo no topo */
+    transition: width 0.3s ease;  /* Efeito suave ao expandir horizontalmente */
+    max-width: 30vw;  /* Máximo de 30% da largura da tela */
+}
+
+/* Estilo do parágrafo dentro da div */
+.centralizada p {
+    margin: 10px 0 0 10px;  /* Margens do conteúdo dentro da div */
+    word-wrap: break-word;   /* Quebra de linha caso o texto ultrapasse a largura */
+}
+
+/* Expande a div até 30% da largura da tela com base no conteúdo */
+.centralizada p {
+    width: auto;
+    max-width: 100%;
+}
+
+/* Ajusta a largura da div conforme o conteúdo */
+.centralizada:has(p) {
+    width: 30vw;
+}
