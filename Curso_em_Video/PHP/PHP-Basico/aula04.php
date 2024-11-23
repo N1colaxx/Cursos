@@ -23,7 +23,7 @@
             echo "$nome tem $idade anos !!";
             
             echo "<br> <br> ";
-            echo '$nome tem $idade anos !!';
+            echo '$nome tem $idade anos ';
 
             
         ?>
