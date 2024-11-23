@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="c">
+        <form method="get" action="dados_1.php">
+            Nome: <input type="text" name="nome"/><br/><br/>
+            Ano de nascimento: <input type="number" name="anoNas"/><br/>
+
+            <fieldset><legend> Sexo </legend>
+                <input type="radio" name="sexo" id="masc" value="hoemem" checked/>
+                <label for="masc"> Masculino </label>
+                <input type="radio" name="sexo" id="fem" value="mulher"/>
+                <label for="fem"> Feminino </label>
+            </fieldset><br/>
+            <input type="submit" value="Enviar"/>
+        </form>
+    </div>
+</body>
+</html>
