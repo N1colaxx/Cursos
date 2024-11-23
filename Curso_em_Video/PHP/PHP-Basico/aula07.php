@@ -19,7 +19,7 @@
     ident   $a === $b
 -->
 
-<!-- OP Unario -->
+<!-- OP Tenario -->
  <!--
     Usa para comparações SIMPLES.
     
@@ -50,7 +50,7 @@
             echo "<br>Hello World, starting in PHP<br><br>";
         ?>
 
-    <!-- ex 1 de OP Unario -->
+    <!-- ex 1 de OP Tenario -->
         <?php
             // $n1 = $_GET["a"];
             // $n2 = $_GET["b"];
@@ -61,7 +61,7 @@
             // echo "O res será = $r";
         ?>
 
-    <!-- ex 2 de OP Unario -->
+    <!-- ex 2 de OP Tenario -->
         <?php
             // $a = 3;
             // $b ="3";
@@ -74,7 +74,7 @@
         ?>
     
 
-    <!-- ex 3 de Op Unario -->
+    <!-- ex 3 de Op Tenario -->
      <?php
         // $n1 = $_GET["n1"];
         // $n2 = $_GET["n2"];
