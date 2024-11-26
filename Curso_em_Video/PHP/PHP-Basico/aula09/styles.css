@@ -50,3 +50,17 @@ h2 {
     border-bottom: 2px solid #444;
     padding-bottom: 10px;
 }
+
+
+.BTN {
+    background-color: #333; /* Cor de fundo escura */
+    color: #fff; /* Texto branco para contraste */
+    border: 2px solid #555; /* Borda suave */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 5px 6px; /* Espaciamento interno do botão */
+    font-size: 12px; /* Tamanho da fonte */
+    font-weight: bold; /* Deixar a fonte em negrito */
+    text-transform: uppercase; /* Transformar texto para maiúsculas */
+    cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
+    transition: all 0.3s ease; /* Transição suave para efeitos de hover */
+}
