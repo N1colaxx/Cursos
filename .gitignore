@@ -15,7 +15,7 @@ node_modules/
 
 # Ignorar as pastas cmd e mingw46 dentro da pasta GIT
 /Git/cmd/
-/Git/mingw46/
+Git/mingw64/
 
 
 
