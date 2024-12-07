@@ -1,2 +1,24 @@
-# Auto detect text files and perform LF normalization
-text = auto; 
+# Normalizar finais de linha para garantir consistência em sistemas diferentes
+* text=auto
+
+# Arquivos de código Python
+*.py text
+
+# Ignorar alterações em arquivos de configuração locais, como arquivos de ambiente
+*.env export-ignore
+
+# Definir arquivos de imagem como binários para evitar mesclagens automáticas
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+
+# Arquivos de histórico ou logs (não rastrear alterações)
+*.log export-ignore
+
+# Arquivos de configuração que não devem ser modificados
+*.json export-ignore
+*.yaml export-ignore
+
+# Forçar GitHub a reconhecer arquivos Python como código Python
+*.py linguist-language=Python
