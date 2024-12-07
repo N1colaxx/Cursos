@@ -1,0 +1,220 @@
+
+Comandos DDl e DML:
+    DDL =   Data Definittion language
+        CREATE DATABASE
+        CREATE TABLE
+        ALTER TABLE
+        DROP TABLE
+    
+    DML =   Data Manipulation language
+        INSERT INTO
+        UPDATE
+        DELETE
+        TRUNCATE
+
+
+
+
+MySQL
+
+    Ativar ou Desativar o SAFE UPDATE:
+      off =>  SET SQL_SAFE_UPDATES = 0;  | on => SET SQL_SAFE_UPDATES = 1;
+    
+    USE 
+        Selecionar qual banco de dados você deseja utilizar em uma sessão de trabalho.
+
+        USE nome_banco | USE cadastro;
+
+
+    SELECT
+        Você pode verificar qual banco de dados está selecionado com o comando SELECT
+
+        SELECT DATABASE();
+
+
+    INSERT INTO 
+        Os valores devem corresponder aos tipos e à ordem das colunas.
+        O uso de colunas específicas ajuda a evitar erros ao lidar com tabelas grandes.
+
+        INSERT INTO nome_da_tabela (coluna1, coluna2 ...)  |   INSERT INTO cliente (nome, idade, cidade)
+        VALUES (                                            |   VALUES (
+            valor1,                                         |       'Maria',
+            valor2,                                         |       30,
+            valor3,                                         |       'São Paulo
+        );                                                  |   ');
+
+
+    UPDATE
+        Pode ser chamado de várias maneiras, dependendo das necessidades específicas de atualização, condições e como ele é estruturado
+        Usado para atualizar registros existentes em uma tabela. Ele permite modificar os valores de uma ou mais colunas em linhas específicas.
+           
+        UPDATE nome_da_tabela    |   UPDATE clientes
+        SET coluna1 = valor1     |   SET cidade = 'Belo Horizonte'
+        WHERE condição;          |   WHERE id = 2;
+
+        SET
+            no SET colocamos as colunas e podemos colocar mais de uma coluna e seus valores
+                SET cidade = 'Belo Horizonte', idade = 14 ...
+
+        WHERE
+            usando WHERE para multiplos valores use ( IN ):
+                UPDATE cursos
+                SET carga = 400
+                WHERE idcursos IN (3, 4, 5, 6, 7, 8, 9);
+                Aqui atualiza todos os ID dentro dos parentezes.
+        
+        LIMIT
+            O número máximo de registros que você deseja atualizar
+                UPDATE nome_da_tabela
+                SET coluna1 = valor1, coluna2 = valor2
+                WHERE condição
+                LIMIT n;
+
+        
+    ALTER TABLE 
+        Usado para alterar a estrutura de uma tabela. Ele permite adicionar, modificar ou excluir colunas, além de outras alterações.
+
+        OP comuns:
+            ADD uma coluna, Modificar uma coluna existente, Renomear uma coluna, Excluir uma coluna, Renomear a tabela,
+
+
+        Add coluna:
+            ALTER TABLE nome_da_tabela                 |  ALTER TABLE clientes
+            ADD coluna_nova tipo_dado [restrição];     |  ADD telefone VARCHAR(15);
+        
+        Modificar coluna existente:
+
+            MODIFY => usado para alterar a definição de uma coluna existente (como o tipo de dado ou outras opções), mas não altera o nome da coluna.
+                ALTER TABLE nome_da_tabela                   | ALTER TABLE clientes  
+                MODIFY nome_da_coluna tipo_de_dado [opções]; | MODIFY telefone VARCHAR(20);
+
+            CHANGE => usado para renomear uma coluna e/ou alterar sua definição (tipo de dados, tamanho, etc.). 
+                ALTER TABLE nome_da_tabela  CHANGE nome_antigo_da_coluna  novo_nome_da_coluna  tipo_de_dado [opções];  | ALTER TABLE alunos CHANGE nome aluno_nome VARCHAR(255) NOT NULL;
+
+
+        Renomear coluna:
+            ALTER TABLE nome_da_tabela                   | ALTER TABLE clientes  
+            RENAME COLUMN coluna_antiga TO coluna_nova;  | RENAME COLUMN telefone TO celular;
+
+        Excluir coluna:
+            ALTER  TABLE nome_da_tabela | ALTER TABLE clientes
+            DROP COLUMN coluna_coluna;  | DROP COLUMN celular;
+
+        Renomear tabela:
+            ALTER TABLE nome_da_tabela  | ALTER TABLE clientes
+            RENAME TO usuarios;         | RENAME TO usuarios;
+
+        Update:
+            Usado para atualizar registros existentes em uma tabela. Ele permite modificar os valores de uma ou mais colunas em linhas específicas.
+            
+            UPDATE nome_da_tabela    |   UPDATE clientes
+            SET coluna1 = valor1     |   SET cidade = 'Belo Horizonte'
+            WHERE condição;          |   WHERE id = 2;
+
+
+    LIMIT
+        O número máximo de registros que você deseja atualizar. 
+        Pode ser usado em outro comandos tbm.
+            UPDATE nome_da_tabela
+            SET coluna1 = valor1, coluna2 = valor2
+            WHERE condição
+            LIMIT n;
+
+
+    DROP TABLE e TRUNCATE
+        Usado para excluir completamente uma tabela e todos os dados contidos nela.
+
+        Cuidado: Este comando é irreversível. Todos os dados e a estrutura da tabela serão perdidos.
+
+        DROP TABLE nome_da_tabela; | DROP TABLE clientes;
+
+        Para excluir apenas os dados, mas manter a estrutura, use TRUNCATE TABLE
+            TRUNCATE TABLE nome_da_tabela | TRUNCATE TABLE clientes;
+
+        Verificações antes de excluir:
+            Para evitar erros, pode-se usar uma verificação (suportada em alguns bancos de dados):
+                DROP TABLE IF EXISTS nome_da_tabela;
+
+
+    Delite 
+        Excluir registros de uma tabela com base em uma condição especificada na cláusula WHERE. 
+        Se você omitir a condição WHERE, todos os registros da tabela serão deletados.
+
+        DELETE FROM nome_da_tabela  
+        WHERE condição;  -- So apaga quando atende o requisito  
+
+        DELETE FROM cursos;  -- Apaga todos os registros da tabela!
+        
+
+
+Usando MySQL pelo terminal do Wanpserver
+
+    SHOW DATABASE 
+        Mostras os bancos de dados do server 
+
+        SHOW DATABASE nome_banco;
+        
+    
+    STATUS
+        Exibir informações sobre a conexão atual,
+        
+        STATUS;
+        
+
+    USE 
+        Abrir esse banco para manipulação 
+
+        USE nome_banco;
+       
+
+    SHOW TABLES 
+        Mostrar as tabelas 
+
+        SHOW TABLES;
+        
+
+    DESCRIBE ou DESC  
+        Mostra a estrutura da tabela
+
+        DESCRIBE nome_tabela
+        DESC nome_tabela
+        
+
+    SELECT * FROM 
+        Mostra os dados da tabela 
+
+        SELECT * FROM nome_da_tabela
+
+
+    SHOW CREATE 
+        Ver o comando usado na criação d* banco de dados ou tabela. 
+
+        show create database nome_banco;
+        show create table nome_tabela;        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

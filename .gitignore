@@ -12,3 +12,12 @@ node_modules/
 
 # Ignorar o diretório .git (para evitar rastrear o repositório dentro de si mesmo)
 .git/
+
+# Ignorar as pastas cmd e mingw46 dentro da pasta GIT
+/Git/cmd/
+/Git/mingw46/
+
+
+
+# Ignorar a pasta de backup do banco de dados
+Backup/
