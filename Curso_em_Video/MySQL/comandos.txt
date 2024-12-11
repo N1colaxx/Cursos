@@ -1,16 +1,20 @@
 
-Comandos DDl e DML:
-    DDL =   Data Definittion language
+Comandos DDl , DML e DQL:
+    DDL =   Data Definittion language | linguagem de definição de dados
         CREATE DATABASE
         CREATE TABLE
         ALTER TABLE
         DROP TABLE
     
-    DML =   Data Manipulation language
+    DML =   Data Manipulation language | linguagem de manipulação de dados
         INSERT INTO
         UPDATE
         DELETE
         TRUNCATE
+        SELECT
+
+    DQL = Data query lenguege | linguagem de consulta de dados
+        SELECT
 
 
 
@@ -27,9 +31,84 @@ MySQL
 
 
     SELECT
-        Você pode verificar qual banco de dados está selecionado com o comando SELECT
+        Você pode verificar qual banco de dados está selecionado com o comando SELECT, varias formas de ser chamado.
+
+        OP de Comparação:
+            = (igual a)
+            <> ou != (diferente de)
+            > (maior q)
+            < (menor q)
+            >= (maior ou igual)
+            <= (menor ou igual)
+
+        OP logicos:
+            AND
+            OR
+            NOT
+        
+        OP conjunto:
+            IN      (verifica um se valor esta em uma lista ou conjuntode valores )
+            NOT IN      (verifica se um valor não esta em lista ou conjunto)
+        
+        OP intevalos:
+            BETWEEN     (verifica se um valor esta dentro de um espaço especifico(inclusive os limites))
+            NOT BETWEEN     (verifica um valor fora do intervalo)
+        
+        OP padrão:
+            LIKE        (um valor coresponde a um padrão usando curingas)
+                        curingas = % ou _ 
+                            %  (representa zero ou mais caracteres)
+                            _  (representa exatamente um caractere)
+            
+            NOT LIKE        (valor não corresponde a um padrão)
+
+        OP nulo:
+            IS NULL     (verifica se o valor de uma coluna é NULL)
+
+            IS NOT NULL (verifica se o valor de coluna NÂO é NULL)
+
+        OP de Subconsultas:
+            EXISTS      (verifica uma subconsulta e retorna VERDADEIRO  se houver aomenos 1 res)
+
+            NOT EXISTS      (verifica uma subconsulta e retorna VERDADEIRO se não tiver res )
+
 
         SELECT DATABASE();
+
+
+        SELECT valor1, valor2 ... FROM nome_banco   |   SELECT nome, carga, ano FROM cursos
+        ORDER BY valor1, valor3 ....;               |   ORDER BY none;
+
+        SELECT + WHERE
+            SELECT valor1, valor2 ... FROM nome_banco   |   SELECT nome, carga, ano FROM cursos
+            WHERE  valor condição ou operadores         |   WHERE ano <= 2018
+            ORDER BY valor1, valor3 ....;               |   ORDER BY none;
+
+        SELECT + IN e NOT IN
+            SELECT nome FROM clientes WHERE cidade IN ('São Paulo', 'Rio de Janeiro', 'Curitiba');
+        
+            SELECT nome FROM clientes WHERE cidade NOT IN ('São Paulo', 'Rio de Janeiro', 'Curitiba');
+
+        SELECT + BETWEEN e NOT BETWEEN
+            SELECT nome, salario FROM funcionarios WHERE salario BETWEEN 3000 AND 8000;
+
+            SELECT nome, salario FROM funcionarios WHERE salario NOT BETWEEN 3000 AND 8000;
+
+        SELECT + LIKE
+            SELECT nome FROM clientes WHERE nome LIKE 'Jo%';
+                SELECT nome FROM clientes WHERE nome LIKE 'Jo_ão';
+
+            SELECT nome FROM clientes WHERE nome NOT LIKE 'A%';
+
+        SELECT + IS e IS NULL
+            SELECT nome FROM clientes WHERE telefone IS NULL;
+
+            SELECT nome FROM clientes WHERE telefone IS NOT NULL;
+
+        SELECT + EXISTS e NOT EXISTS
+            SELECT nome FROM clientes WHERE EXISTS (SELECT * FROM pedidos WHERE clientes.id = pedidos.cliente_id);
+
+            SELECT nome FROM clientes WHERE NOT EXISTS (SELECT * FROM pedidos WHERE clientes.id = pedidos.cliente_id);
 
 
     INSERT INTO 
@@ -90,7 +169,6 @@ MySQL
 
             CHANGE => usado para renomear uma coluna e/ou alterar sua definição (tipo de dados, tamanho, etc.). 
                 ALTER TABLE nome_da_tabela  CHANGE nome_antigo_da_coluna  novo_nome_da_coluna  tipo_de_dado [opções];  | ALTER TABLE alunos CHANGE nome aluno_nome VARCHAR(255) NOT NULL;
-
 
         Renomear coluna:
             ALTER TABLE nome_da_tabela                   | ALTER TABLE clientes  
@@ -191,24 +269,6 @@ Usando MySQL pelo terminal do Wanpserver
 
         show create database nome_banco;
         show create table nome_tabela;        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
