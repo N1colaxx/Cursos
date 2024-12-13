@@ -33,51 +33,68 @@ MySQL
     SELECT
         Você pode verificar qual banco de dados está selecionado com o comando SELECT, varias formas de ser chamado.
 
-        OP de Comparação:
-            = (igual a)
-            <> ou != (diferente de)
-            > (maior q)
-            < (menor q)
-            >= (maior ou igual)
-            <= (menor ou igual)
-
-        OP logicos:
-            AND
-            OR
-            NOT
-        
-        OP conjunto:
-            IN      (verifica um se valor esta em uma lista ou conjuntode valores )
-            NOT IN      (verifica se um valor não esta em lista ou conjunto)
-        
-        OP intevalos:
-            BETWEEN     (verifica se um valor esta dentro de um espaço especifico(inclusive os limites))
-            NOT BETWEEN     (verifica um valor fora do intervalo)
-        
-        OP padrão:
-            LIKE        (um valor coresponde a um padrão usando curingas)
-                        curingas = % ou _ 
-                            %  (representa zero ou mais caracteres)
-                            _  (representa exatamente um caractere)
-            
-            NOT LIKE        (valor não corresponde a um padrão)
-
-        OP nulo:
-            IS NULL     (verifica se o valor de uma coluna é NULL)
-
-            IS NOT NULL (verifica se o valor de coluna NÂO é NULL)
-
-        OP de Subconsultas:
-            EXISTS      (verifica uma subconsulta e retorna VERDADEIRO  se houver aomenos 1 res)
-
-            NOT EXISTS      (verifica uma subconsulta e retorna VERDADEIRO se não tiver res )
-
-
         SELECT DATABASE();
 
+        funções:
+            
+        SELECT + DISTINCT
+                retorna somente valores unicos de uma coluna 
 
-        SELECT valor1, valor2 ... FROM nome_banco   |   SELECT nome, carga, ano FROM cursos
-        ORDER BY valor1, valor3 ....;               |   ORDER BY none;
+                SELECT DISTINCT nacionalidade from gafanhotos;
+
+        SELECT + COUNT 
+             contar o número de linhas ou valores em um conjunto de resultados.
+
+             SELECT COUNT(*) from cursos;
+
+        SELECT + MAX
+            used to find the maximum value in a specified 
+
+            SELECT MAX(aulas) FROM cursos WHERE ano = '2024';
+
+
+        Operações:
+            OP de Comparação:
+                = (igual a)
+                <> ou != (diferente de)
+                > (maior q)
+                < (menor q)
+                >= (maior ou igual)
+                <= (menor ou igual)
+
+            OP logicos:
+                AND
+                OR
+                NOT
+            
+            OP conjunto:
+                IN      (verifica um se valor esta em uma lista ou conjuntode valores )
+                NOT IN      (verifica se um valor não esta em lista ou conjunto)
+            
+            OP intevalos:
+                BETWEEN     (verifica se um valor esta dentro de um espaço especifico(inclusive os limites))
+                NOT BETWEEN     (verifica um valor fora do intervalo)
+            
+            OP padrão:
+                LIKE        (um valor coresponde a um padrão usando curingas)
+                            curingas = % ou _ 
+                                %  (representa zero ou mais caracteres)
+                                _  (representa exatamente um caractere)
+                
+                NOT LIKE        (valor não corresponde a um padrão)
+
+            OP nulo:
+                IS NULL     (verifica se o valor de uma coluna é NULL)
+
+                IS NOT NULL (verifica se o valor de coluna NÂO é NULL)
+
+            OP de Subconsultas:
+                EXISTS      (verifica uma subconsulta e retorna VERDADEIRO  se houver aomenos 1 res)
+
+                NOT EXISTS      (verifica uma subconsulta e retorna VERDADEIRO se não tiver res )
+
+        SELECT + ORDER BY 
+            SELECT nome, carga, ano FROM cursos ORDER BY none;
 
         SELECT + WHERE
             SELECT valor1, valor2 ... FROM nome_banco   |   SELECT nome, carga, ano FROM cursos
