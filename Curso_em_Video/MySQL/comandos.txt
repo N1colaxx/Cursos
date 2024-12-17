@@ -24,7 +24,7 @@
 
 
 
-    MySQL
+MySQL
 
     Operações de Comparação:
 
@@ -261,16 +261,18 @@
                 GROUP BY cidade
                 HAVING COUNT(*) > 5;
 
-                
+
     Usando MySQL no Terminal (Wanpserver)
 
         SHOW DATABASES: 
             Mostra os bancos de dados disponíveis.
 
             SHOW DATABASES;
-            SHOW TABLES: Exibe as tabelas dentro do banco de dados selecionado.
 
         SHOW TABLES;
+            
+            SHOW TABLES: Exibe as tabelas dentro do banco de dados selecionado.
+
             DESCRIBE ou DESC: Exibe a estrutura de uma tabela.
 
             DESCRIBE nome_da_tabela;
@@ -287,6 +289,8 @@
             SHOW CREATE DATABASE nome_banco;
             SHOW CREATE TABLE nome_tabela;
 
+Modelo Relacional 
+    
 
 
 
