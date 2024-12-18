@@ -65,7 +65,8 @@ MySQL
         NOT BETWEEN: Verifica se um valor não está dentro de um intervalo.
             SELECT nome FROM produtos WHERE preco NOT BETWEEN 10 AND 50;
 
-    LIKE e NOT LIKE
+    LIK e NOT LIKE
+        Pode ser usado de outras formas.
 
         LIKE: Para correspondência de padrões com curingas (% ou _).
             SELECT nome FROM clientes WHERE nome LIKE 'J%';     # A ( % ) ela aceita qualquer caractere depois do J e n tem um limite
@@ -84,7 +85,7 @@ MySQL
 
     EXISTS E NOT EXISTS
 
-        EXISTS: Verifica se uma subconsulta retorna pelo menos uma linha.
+        EXISTS: Verifica se uma subconsulta existe e retorna pelo menos uma linha.
 
             SELECT nome 
             FROM clientes C 
@@ -289,9 +290,8 @@ MySQL
             SHOW CREATE DATABASE nome_banco;
             SHOW CREATE TABLE nome_tabela;
 
-Modelo Relacional 
-    
+   
 
-
+Da pra usar a maioria dos comandos de outras formas. 
 
 
