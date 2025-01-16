@@ -16,9 +16,6 @@ Comandos DDl , DML e DQL:
     DQL = Data query lenguege | linguagem de consulta de dados
         SELECT
 
-
-
-
 MySQL
 
     Ativar ou Desativar o SAFE UPDATE:
@@ -52,6 +49,13 @@ MySQL
 
             SELECT MAX(aulas) FROM cursos WHERE ano = '2024';
 
+        SELECT + MIN    
+            used to find the minimum value in a specified
+
+            SELECT MIM(aulas) From cursos WHERE ano = '2016';
+
+        SELECT + SUN
+            usado para somar valores 
 
         Operações:
             OP de Comparação:
@@ -199,12 +203,6 @@ MySQL
             ALTER TABLE nome_da_tabela  | ALTER TABLE clientes
             RENAME TO usuarios;         | RENAME TO usuarios;
 
-        Update:
-            Usado para atualizar registros existentes em uma tabela. Ele permite modificar os valores de uma ou mais colunas em linhas específicas.
-            
-            UPDATE nome_da_tabela    |   UPDATE clientes
-            SET coluna1 = valor1     |   SET cidade = 'Belo Horizonte'
-            WHERE condição;          |   WHERE id = 2;
 
 
     LIMIT
