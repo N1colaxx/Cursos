@@ -1,295 +1,186 @@
+Comandos DDL, DML e DQL
+    DDL: Data Definition Language (Linguagem de Definição de Dados)
 
-Comandos DDl , DML e DQL:
-    DDL =   Data Definittion language | linguagem de definição de dados
-        CREATE DATABASE
-        CREATE TABLE
-        ALTER TABLE
-        DROP TABLE
-    
-    DML =   Data Manipulation language | linguagem de manipulação de dados
-        INSERT INTO
-        UPDATE
-        DELETE
-        TRUNCATE
-        SELECT
+    Comandos para definir e estruturar o banco de dados:
+        CREATE DATABASE: Cria um novo banco de dados.
+        CREATE TABLE: Cria uma nova tabela em um banco de dados.
+        ALTER TABLE: Modifica a estrutura de uma tabela existente (ex: adicionar ou excluir colunas).
+        DROP TABLE: Exclui uma tabela do banco de dados.
+        DML: Data Manipulation Language (Linguagem de Manipulação de Dados)
 
-    DQL = Data query lenguege | linguagem de consulta de dados
-        SELECT
+    Comandos para manipular dados no banco:
+        INSERT INTO: Insere novos registros em uma tabela.
+        UPDATE: Atualiza registros existentes em uma tabela.
+        DELETE: Exclui registros de uma tabela com base em condições específicas.
+        TRUNCATE: Exclui todos os registros de uma tabela (mantém a estrutura).
+        SELECT: Consulta dados de uma tabela ou banco.
+        DQL: Data Query Language (Linguagem de Consulta de Dados)
 
-MySQL
+    Comandos para consultar dados do banco:
+        SELECT: Recupera dados de uma ou mais tabelas.
+
+
+
+
+Comandos MySQL
+
+    Operações de Comparação:
+        = (igual)
+        <> ou != (diferente)
+        > (maior que)
+        < (menor que)
+        >= (maior ou igual)
+        <= (menor ou igual)
+    Operações Lógicas:
+        AND, OR, NOT
 
     Ativar ou Desativar o SAFE UPDATE:
-      off =>  SET SQL_SAFE_UPDATES = 0;  | on => SET SQL_SAFE_UPDATES = 1;
-    
-    USE 
-        Selecionar qual banco de dados você deseja utilizar em uma sessão de trabalho.
+        Desativar: SET SQL_SAFE_UPDATES = 0;
+        Ativar: SET SQL_SAFE_UPDATES = 1;
 
-        USE nome_banco | USE cadastro;
+    Comando USE: Seleciona o banco de dados ativo para uma sessão de trabalho:
+        USE nome_banco;
 
+    Operadores de Conjunto:
+        IN: Verifica se um valor está dentro de um conjunto.
+        Exemplo: SELECT nome FROM clientes WHERE cidade IN ('São Paulo', 'Rio de Janeiro', 'Curitiba');
 
-    SELECT
-        Você pode verificar qual banco de dados está selecionado com o comando SELECT, varias formas de ser chamado.
+        NOT IN: Verifica se um valor não está dentro de um conjunto.
+        Exemplo: SELECT nome FROM clientes WHERE cidade NOT IN ('São Paulo', 'Rio de Janeiro', 'Curitiba');
 
-        SELECT DATABASE();
+    Operadores de Intervalo:
+        BETWEEN: Verifica se um valor está dentro de um intervalo (inclusive os limites).
+        Exemplo: SELECT nome FROM produtos WHERE preco BETWEEN 10 AND 50;
 
-        funções:
-            
-        SELECT + DISTINCT
-                retorna somente valores unicos de uma coluna 
+        NOT BETWEEN: Verifica se um valor não está dentro de um intervalo.
+        Exemplo: SELECT nome FROM produtos WHERE preco NOT BETWEEN 10 AND 50;
 
-                SELECT DISTINCT nacionalidade from gafanhotos;
+    Operadores de Padrão:
+        LIKE: Para correspondência de padrões com curingas (% ou _).
+        Exemplo: SELECT nome FROM clientes WHERE nome LIKE 'J%';
 
-        SELECT + COUNT 
-             contar o número de linhas ou valores em um conjunto de resultados.
+        NOT LIKE: Para negar correspondência de padrões.
+        Exemplo: SELECT nome FROM clientes WHERE nome NOT LIKE 'j_';
 
-             SELECT COUNT(*) from cursos;
+    Operadores Nulos:
+        IS NULL: Verifica se o valor é NULL.
+        Exemplo: SELECT nome FROM pedidos WHERE data_entrega IS NULL;
 
-        SELECT + MAX
-            used to find the maximum value in a specified 
+        IS NOT NULL: Verifica se o valor não é NULL.
+        Exemplo: SELECT nome FROM pedidos WHERE data_entrega IS NOT NULL;
 
-            SELECT MAX(aulas) FROM cursos WHERE ano = '2024';
-
-        SELECT + MIN    
-            used to find the minimum value in a specified
-
-            SELECT MIM(aulas) From cursos WHERE ano = '2016';
-
-        SELECT + SUN
-            usado para somar valores 
-
-        Operações:
-            OP de Comparação:
-                = (igual a)
-                <> ou != (diferente de)
-                > (maior q)
-                < (menor q)
-                >= (maior ou igual)
-                <= (menor ou igual)
-
-            OP logicos:
-                AND
-                OR
-                NOT
-            
-            OP conjunto:
-                IN      (verifica um se valor esta em uma lista ou conjuntode valores )
-                NOT IN      (verifica se um valor não esta em lista ou conjunto)
-            
-            OP intevalos:
-                BETWEEN     (verifica se um valor esta dentro de um espaço especifico(inclusive os limites))
-                NOT BETWEEN     (verifica um valor fora do intervalo)
-            
-            OP padrão:
-                LIKE        (um valor coresponde a um padrão usando curingas)
-                            curingas = % ou _ 
-                                %  (representa zero ou mais caracteres)
-                                _  (representa exatamente um caractere)
+    Operadores de Subconsultas:
+        EXISTS: Verifica se uma subconsulta existe e retorna pelo menos uma linha.
+            SELECT nome 
+            FROM clientes C 
+            WHERE EXISTS (
+                SELECT 1 
+                FROM pedidos P 
+                WHERE P.cliente_id = C.id
+            );
                 
-                NOT LIKE        (valor não corresponde a um padrão)
+        NOT EXISTS: Verifica se uma subconsulta não retorna nenhuma linha.
+            SELECT nome 
+            FROM clientes c 
+            WHERE NOT EXISTS (
+                SELECT 1 
+                FROM pedidos p
+                WHERE p.cliente_id = c.id
+            );
 
-            OP nulo:
-                IS NULL     (verifica se o valor de uma coluna é NULL)
 
-                IS NOT NULL (verifica se o valor de coluna NÂO é NULL)
 
-            OP de Subconsultas:
-                EXISTS      (verifica uma subconsulta e retorna VERDADEIRO  se houver aomenos 1 res)
+    Comandos SELECT Combinados com Funções
 
-                NOT EXISTS      (verifica uma subconsulta e retorna VERDADEIRO se não tiver res )
+        SELECT COUNT(*): Conta o número de registros.
+            Exemplo: SELECT COUNT(*) FROM cursos;
 
-        SELECT + ORDER BY 
-            SELECT nome, carga, ano FROM cursos ORDER BY none;
+        SELECT DISTINCT: Retorna valores únicos de uma coluna.
+            Exemplo: SELECT DISTINCT nacionalidade FROM gafanhotos;
 
-        SELECT + WHERE
-            SELECT valor1, valor2 ... FROM nome_banco   |   SELECT nome, carga, ano FROM cursos
-            WHERE  valor condição ou operadores         |   WHERE ano <= 2018
-            ORDER BY valor1, valor3 ....;               |   ORDER BY none;
+        SELECT MAX: Retorna o valor máximo de uma coluna.
+            Exemplo: SELECT MAX(aulas) FROM cursos WHERE ano = '2024';
 
-        SELECT + IN e NOT IN
-            SELECT nome FROM clientes WHERE cidade IN ('São Paulo', 'Rio de Janeiro', 'Curitiba');
+        SELECT MIN: Retorna o valor mínimo de uma coluna.
+            Exemplo: SELECT MIN(aulas) FROM cursos WHERE ano = '2016';
+
+        SELECT SUM: Soma os valores de uma coluna.
+            Exemplo: SELECT SUM(aulas) FROM cursos;
+
+        SELECT AVG: Calcula a média de valores de uma coluna.
+            Exemplo: SELECT AVG(aulas) FROM cursos;
+
+
+
+    Combinando SELECT com Operadores:
+            ORDER BY: Ordena os resultados.
+                Exemplo: SELECT nome, carga, ano FROM cursos ORDER BY nome;
+
+            WHERE: Filtra os resultados com base em condições.
+                Exemplo: SELECT nome, carga, ano FROM cursos WHERE ano <= 2018 ORDER BY nome;
+
+            IN e NOT IN: Como mencionado anteriormente para selecionar valores dentro ou fora de um conjunto.
         
-            SELECT nome FROM clientes WHERE cidade NOT IN ('São Paulo', 'Rio de Janeiro', 'Curitiba');
+            BETWEEN e NOT BETWEEN: Para selecionar valores dentro ou fora de um intervalo.
 
-        SELECT + BETWEEN e NOT BETWEEN
-            SELECT nome, salario FROM funcionarios WHERE salario BETWEEN 3000 AND 8000;
+            LIKE e NOT LIKE: Para correspondência ou negação de padrões.
+        
+            IS NULL e IS NOT NULL: Para verificar se valores são NULL ou não.
+            
+            EXISTS e NOT EXISTS: Para verificar a existência ou não de uma subconsulta.
 
-            SELECT nome, salario FROM funcionarios WHERE salario NOT BETWEEN 3000 AND 8000;
 
-        SELECT + LIKE
-            SELECT nome FROM clientes WHERE nome LIKE 'Jo%';
-                SELECT nome FROM clientes WHERE nome LIKE 'Jo_ão';
 
-            SELECT nome FROM clientes WHERE nome NOT LIKE 'A%';
 
-        SELECT + IS e IS NULL
-            SELECT nome FROM clientes WHERE telefone IS NULL;
 
-            SELECT nome FROM clientes WHERE telefone IS NOT NULL;
-
-        SELECT + EXISTS e NOT EXISTS
-            SELECT nome FROM clientes WHERE EXISTS (SELECT * FROM pedidos WHERE clientes.id = pedidos.cliente_id);
-
-            SELECT nome FROM clientes WHERE NOT EXISTS (SELECT * FROM pedidos WHERE clientes.id = pedidos.cliente_id);
-
+Comandos DML: Manipulação de Dados
 
     INSERT INTO 
-        Os valores devem corresponder aos tipos e à ordem das colunas.
-        O uso de colunas específicas ajuda a evitar erros ao lidar com tabelas grandes.
-
-        INSERT INTO nome_da_tabela (coluna1, coluna2 ...)  |   INSERT INTO cliente (nome, idade, cidade)
-        VALUES (                                            |   VALUES (
-            valor1,                                         |       'Maria',
-            valor2,                                         |       30,
-            valor3,                                         |       'São Paulo
-        );                                                  |   ');
+    Usado para inserir novos registros em uma tabela:
+            INSERT INTO nome_da_tabela (coluna1, coluna2, ...) 
+            VALUES ('valor1', 'valor2', ...);
 
 
     UPDATE
-        Pode ser chamado de várias maneiras, dependendo das necessidades específicas de atualização, condições e como ele é estruturado
-        Usado para atualizar registros existentes em uma tabela. Ele permite modificar os valores de uma ou mais colunas em linhas específicas.
-           
-        UPDATE nome_da_tabela    |   UPDATE clientes
-        SET coluna1 = valor1     |   SET cidade = 'Belo Horizonte'
-        WHERE condição;          |   WHERE id = 2;
+    Usado para atualizar registros existentes em uma tabela:
+        UPDATE nome_da_tabela
+        SET coluna1 = valor1, coluna2 = valor2
+        WHERE condição;
 
-        SET
-            no SET colocamos as colunas e podemos colocar mais de uma coluna e seus valores
-                SET cidade = 'Belo Horizonte', idade = 14 ...
+    SET: Coloca os novos valores para as colunas.
+    WHERE: Define a condição para atualizar apenas os registros que atendem a essa condição.
 
-        WHERE
-            usando WHERE para multiplos valores use ( IN ):
-                UPDATE cursos
-                SET carga = 400
-                WHERE idcursos IN (3, 4, 5, 6, 7, 8, 9);
-                Aqui atualiza todos os ID dentro dos parentezes.
+
+    DELETE
+    Exclui registros de uma tabela com base em uma condição:
+        DELETE FROM nome_da_tabela
+        WHERE condição;
+
+
+    TRUNCATE
+    Exclui todos os registros de uma tabela, mas mantém a estrutura da tabela:
+      TRUNCATE TABLE nome_da_tabela;
+
+
+
+Comandos de Modificação de Estrutura de Tabela (DDL)
+
+    ALTER TABLE: Permite modificar a estrutura de uma tabela (adicionar, modificar ou excluir colunas).
+
+        ADD: Adicionar uma nova coluna.
+            ALTER TABLE nome_da_tabela ADD nova_coluna tipo_dado;
+
+        MODIFY: Modificar a definição de uma coluna existente.
+            ALTER TABLE nome_da_tabela MODIFY coluna tipo_dado;
         
-        LIMIT
-            O número máximo de registros que você deseja atualizar
-                UPDATE nome_da_tabela
-                SET coluna1 = valor1, coluna2 = valor2
-                WHERE condição
-                LIMIT n;
+        CHANGE: Renomear uma coluna ou alterar sua definição.
+            ALTER TABLE nome_da_tabela CHANGE nome_antigo nova_coluna tipo_dado;
 
-        
-    ALTER TABLE 
-        Usado para alterar a estrutura de uma tabela. Ele permite adicionar, modificar ou excluir colunas, além de outras alterações.
+        DROP COLUMN: Excluir uma coluna.
+            ALTER TABLE nome_da_tabela DROP COLUMN nome_coluna;
 
-        OP comuns:
-            ADD uma coluna, Modificar uma coluna existente, Renomear uma coluna, Excluir uma coluna, Renomear a tabela,
+        RENAME TO: Renomear a tabela.
+            ALTER TABLE nome_da_tabela RENAME TO novo_nome;
 
-
-        Add coluna:
-            ALTER TABLE nome_da_tabela                 |  ALTER TABLE clientes
-            ADD coluna_nova tipo_dado [restrição];     |  ADD telefone VARCHAR(15);
-        
-        Modificar coluna existente:
-
-            MODIFY => usado para alterar a definição de uma coluna existente (como o tipo de dado ou outras opções), mas não altera o nome da coluna.
-                ALTER TABLE nome_da_tabela                   | ALTER TABLE clientes  
-                MODIFY nome_da_coluna tipo_de_dado [opções]; | MODIFY telefone VARCHAR(20);
-
-            CHANGE => usado para renomear uma coluna e/ou alterar sua definição (tipo de dados, tamanho, etc.). 
-                ALTER TABLE nome_da_tabela  CHANGE nome_antigo_da_coluna  novo_nome_da_coluna  tipo_de_dado [opções];  | ALTER TABLE alunos CHANGE nome aluno_nome VARCHAR(255) NOT NULL;
-
-        Renomear coluna:
-            ALTER TABLE nome_da_tabela                   | ALTER TABLE clientes  
-            RENAME COLUMN coluna_antiga TO coluna_nova;  | RENAME COLUMN telefone TO celular;
-
-        Excluir coluna:
-            ALTER  TABLE nome_da_tabela | ALTER TABLE clientes
-            DROP COLUMN coluna_coluna;  | DROP COLUMN celular;
-
-        Renomear tabela:
-            ALTER TABLE nome_da_tabela  | ALTER TABLE clientes
-            RENAME TO usuarios;         | RENAME TO usuarios;
-
-
-
-    LIMIT
-        O número máximo de registros que você deseja atualizar. 
-        Pode ser usado em outro comandos tbm.
-            UPDATE nome_da_tabela
-            SET coluna1 = valor1, coluna2 = valor2
-            WHERE condição
-            LIMIT n;
-
-
-    DROP TABLE e TRUNCATE
-        Usado para excluir completamente uma tabela e todos os dados contidos nela.
-
-        Cuidado: Este comando é irreversível. Todos os dados e a estrutura da tabela serão perdidos.
-
-        DROP TABLE nome_da_tabela; | DROP TABLE clientes;
-
-        Para excluir apenas os dados, mas manter a estrutura, use TRUNCATE TABLE
-            TRUNCATE TABLE nome_da_tabela | TRUNCATE TABLE clientes;
-
-        Verificações antes de excluir:
-            Para evitar erros, pode-se usar uma verificação (suportada em alguns bancos de dados):
-                DROP TABLE IF EXISTS nome_da_tabela;
-
-
-    Delite 
-        Excluir registros de uma tabela com base em uma condição especificada na cláusula WHERE. 
-        Se você omitir a condição WHERE, todos os registros da tabela serão deletados.
-
-        DELETE FROM nome_da_tabela  
-        WHERE condição;  -- So apaga quando atende o requisito  
-
-        DELETE FROM cursos;  -- Apaga todos os registros da tabela!
-        
-
-
-Usando MySQL pelo terminal do Wanpserver
-
-    SHOW DATABASE 
-        Mostras os bancos de dados do server 
-
-        SHOW DATABASE nome_banco;
-        
-    
-    STATUS
-        Exibir informações sobre a conexão atual,
-        
-        STATUS;
-        
-
-    USE 
-        Abrir esse banco para manipulação 
-
-        USE nome_banco;
-       
-
-    SHOW TABLES 
-        Mostrar as tabelas 
-
-        SHOW TABLES;
-        
-
-    DESCRIBE ou DESC  
-        Mostra a estrutura da tabela
-
-        DESCRIBE nome_tabela
-        DESC nome_tabela
-        
-
-    SELECT * FROM 
-        Mostra os dados da tabela 
-
-        SELECT * FROM nome_da_tabela
-
-
-    SHOW CREATE 
-        Ver o comando usado na criação d* banco de dados ou tabela. 
-
-        show create database nome_banco;
-        show create table nome_tabela;        
-
-
-
-
-
-
-
-
-
+        DROP TABLE: Exclui uma tabela do banco de dados. Este comando é irreversível:
+            DROP TABLE nome_da_tabela;
