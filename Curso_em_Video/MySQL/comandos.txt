@@ -1,3 +1,7 @@
+
+
+
+
 Comandos DDL, DML e DQL
     DDL: Data Definition Language (Linguagem de Definição de Dados)
 
@@ -31,6 +35,7 @@ Comandos MySQL
         < (menor que)
         >= (maior ou igual)
         <= (menor ou igual)
+        
     Operações Lógicas:
         AND, OR, NOT
 
