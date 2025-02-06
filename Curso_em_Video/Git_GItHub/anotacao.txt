@@ -7,7 +7,7 @@ Bem não vi sobre como usar i git pelo Terminal ou Pront de Comando mas sim no G
     - Clonar.
     - Add novos arquivos ao repositorio.
     - Como usar as Issues e o que elas são.
-    - Branches, aprendi:
+    - Branches:
         . O que é.
         . Como usar.
         . Navegar entre elas.

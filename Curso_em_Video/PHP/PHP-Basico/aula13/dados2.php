@@ -19,15 +19,10 @@
             }
             
             $divisores = [];
+            $multiplos = [];
             for ($i = 1; $i <= $num; $i ++) {
                 if ($num % $i == 0) {
                     $divisores[] = $i;
-                };
-            };
-
-            $multiplos = [];
-            for ($i = 1; $i <= $num; $i ++) {
-                if ($i % $num == 0) {
                     $multiplos[] = $i;
                 };
             };
