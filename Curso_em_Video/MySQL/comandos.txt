@@ -3,8 +3,8 @@
 
 
 Comandos DDL, DML e DQL
-    DDL: Data Definition Language (Linguagem de Definição de Dados)
 
+    DDL: Data Definition Language (Linguagem de Definição de Dados)
     Comandos para definir e estruturar o banco de dados:
         CREATE DATABASE: Cria um novo banco de dados.
         CREATE TABLE: Cria uma nova tabela em um banco de dados.
@@ -12,6 +12,7 @@ Comandos DDL, DML e DQL
         DROP TABLE: Exclui uma tabela do banco de dados.
         DML: Data Manipulation Language (Linguagem de Manipulação de Dados)
 
+    DML: Data Manipulation Language (Linguagem de Manipulation de Dados)
     Comandos para manipular dados no banco:
         INSERT INTO: Insere novos registros em uma tabela.
         UPDATE: Atualiza registros existentes em uma tabela.
@@ -20,6 +21,7 @@ Comandos DDL, DML e DQL
         SELECT: Consulta dados de uma tabela ou banco.
         DQL: Data Query Language (Linguagem de Consulta de Dados)
 
+    DQL: Data Query Linguege (Linguagem de Conssulta de Dados)
     Comandos para consultar dados do banco:
         SELECT: Recupera dados de uma ou mais tabelas.
 
