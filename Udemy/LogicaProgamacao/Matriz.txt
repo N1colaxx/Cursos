@@ -1,9 +1,0 @@
-
-Matriz: coleção de Dados 
-    - Tamanho fixo
-    - Arranjo bidimensional 
-    - Indexada
-    - Homogenia 
-
-ler primeiro: Linha -> Coluna
-
