@@ -9,14 +9,14 @@ Este repositório contém os certificados de cursos concluídos, organizados par
 ### 📌 **SQL para Análise de Dados: Do básico ao avançado**
 - Plataforma: Udemy
 - Duração: 6 horas
-- Certificado: [Visualizar PDF](SQL_Udemy.pdf)
+- Certificado: [Visualizar PDF](sql_udemy.pdf)
 
 ---
 
 ### 📌 **Aprenda Git e GitHub em 3 dias + projetos reais**
 - Plataforma: Udemy
 - Duração: 2,5 horas
-- Certificado: [Visualizar PDF](GIT_Udemy.pdf)
+- Certificado: [Visualizar PDF](git_udemy.pdf)
 
 ---
 
