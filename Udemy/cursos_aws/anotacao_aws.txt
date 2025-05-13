@@ -1,0 +1,47 @@
+
+Cloud Adoption Framework
+
+Oque é ?
+
+6 pilares: 
+   Concepção | Alinhamento | Lançamento | Dimencionamento 
+
+
+Estrategias de Imigração 
+
+Principais pergintas a serem respondidas>
+   Quem é o proprietario ou quem apoia a aplicação ?
+   Quais unidaedes de negocio esta aplicacao suporta ? 
+   Qual é a omportancia (ou criticidade) da aplicacao para o negocio ?
+
+Estrategia para a plicação, 7 opc:
+ refatora | redefinir plataforma | redefinir ospedagem | redecomprar | Realocar | Reter | Retirar
+ 
+
+ Well-Architected Frameork
+
+em que se baseia ? 
+
+tem 6 ateas de foco:
+ Excelencia Operacional | Seguranca | Confiabiliade | Eficiencia De Desempenho | Otimizacao de custos | Sustentabilidade
+
+
+___
+
+Elementos Tecnicos essenciais da AWS -> obj famialirizar-se com  o Conslole de Gerenciamento da AWS
+ 
+Cloud Adoption Framework -> obj orientar os clientes no progresso do seu cenario de negocio e TI atual
+
+Estrategias de Migração para nuvem, para mover cargas de trabalho para AWS
+
+Ter um nivel alto de conhecimente das Praticas recomendadas de arquitetura da AWS usando o  Well-Architected Frameork
+
+___
+
+Elementos Técnicos Essenciais da AWS -> Objetivo: familiarizar-se com o Console de Gerenciamento da AWS.
+
+Cloud Adoption Framework -> Objetivo: orientar os clientes no progresso do seu cenário de negócio e TI atual.
+
+Estratégias de Migração para Nuvem, para mover cargas de trabalho para a AWS.
+
+Ter um nível alto de conhecimento das práticas recomendadas de arquitetura da AWS usando o Well-Architected Framework.

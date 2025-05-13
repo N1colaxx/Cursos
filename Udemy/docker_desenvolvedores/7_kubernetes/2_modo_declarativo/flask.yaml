@@ -1,0 +1,20 @@
+apiVersion: apps/v1                # Define a versão da API Kubernetes usada (Deployment faz parte de 'apps/v1')
+kind: Deployment                   # Tipo do objeto que está sendo criado (Deployment gerencia Pods replicados)
+metadata:
+  name: flask-app-deployment       # Nome do Deployment (único no namespace)
+
+spec:                              # Especificações do Deployment
+  replicas: 4                      # Número de réplicas (4 Pods idênticos serão criados)
+  selector:                        # Define como o Deployment identifica quais Pods ele controla
+    matchLabels:
+      app: flask-app               # Seleciona os Pods com a label 'app: flask-app'
+      
+  template:                        # Template que descreve os Pods que serão criados
+    metadata:
+      labels:
+        app: flask-app             # Rótulo aplicado aos Pods criados (deve combinar com o selector acima)
+        
+    spec:                          # Especificações do(s) container(es) dentro dos Pods
+      containers: 
+        - name: flask              # Nome do container dentro do Pod
+          image: n1colaxx/flask-kub-projeto:3  # Imagem Docker usada para criar o container (inclui a tag ':3')

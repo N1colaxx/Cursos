@@ -1,0 +1,6 @@
+Nome: Maria, Idade:  45
+Nome: João, Idade:  12
+Nome: Pedro, Idade:  15
+Nome: Ana, Idade:  16
+Nome: Nicolas, Idade:  19
+Nome: Antonia, Idade:  53
