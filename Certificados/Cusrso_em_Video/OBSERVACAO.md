@@ -1,0 +1,1 @@
+# Não tenho nenhum pois para obtelos tem q pagar, mas terminei todos esses cursos.
